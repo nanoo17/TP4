@@ -1,0 +1,50 @@
+html{
+    height: 100%;
+}
+.minav{
+    background-color: rgba(17, 80, 238, 0.5);
+}
+.mifooter{
+    background-color: rgb(28, 113, 216) ;
+    text-align: center;
+    padding: 16px 16px 16px 16px;
+    margin-top: 24px;
+}
+.fondo{
+    height: 100%;
+    background-image: url("../img/tienda.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  
+}
+.container{
+    height: 100%;
+}
+.micontainer{
+    min-height: 100%;
+}
+a:link{
+    color: rgba(30, 245, 234, 0.933);
+}
+a:visited{
+    color: rgba(30, 245, 234, 0.933);
+}
+
+.login{
+	
+
+  height: 520px;
+    top: 50%;
+  left: 30%;  
+  padding: 70px 30px;
+}
+
+
+.formulario{
+    margin-top: 24px;
+    margin-left: 20%;
+}
+.boton{
+    margin-left: 33%;
+}

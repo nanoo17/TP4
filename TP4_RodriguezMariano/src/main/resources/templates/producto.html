@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Producto</title>
+	<link th:rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}">
+	<link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css}">
+</head>
+
+<body class="fondo text-white">
+	<div class="container">
+		<div class="micontainer">
+			<div th:insert="layouts/header :: header"></div>
+			<h1 class="text-center">Formulario de Carga de Productos</h1>
+			<div th:if="not ${modoEditar}">
+				<div th:insert="layouts/formulario-producto :: formulario-producto"></div>
+			</div>
+			<div th:if="${modoEditar}">
+				<div th:insert="layouts/formulario-producto-editar :: formulario-producto-editar">
+				</div>
+			</div>
+		</div>
+		<div th:insert="layouts/footer :: footer"></div>
+	</div>
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+		src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+		src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

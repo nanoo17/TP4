@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="formulario" th:fragment="formulario-producto">
+        <form id="formProducto" th:object="${unProducto}" th:action="@{/producto/guardar}" method="post">
+            <div class="form-group row">
+                <label for="codigo" class="col-sm-2 form-label">Codigo producto: </label>
+                <input type="number" id="codigoProducto" th:field="*{codigo}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="nombre" class="col-sm-2 form-label">Nombre producto: </label>
+                <input type="text" id="nombreProducto" th:field="*{nombre}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="precio" class="col-sm-2 form-label">Precio producto: </label>
+                <input type="number" id="precioProducto" th:field="*{precio}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="marca" class="col-sm-2 form-label">Marca producto: </label>
+                <input type="text" id="marcaProducto" th:field="*{marca}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="stock" class="col-sm-2 form-label">Stock producto: </label>
+                <input type="text" id="stockProducto" th:field="*{stock}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group d-flex boton">
+                <button type="submit" class="btn btn-success">Agregar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

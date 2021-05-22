@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}">
+    <link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/5.11.2/css/all.css}">
+</head>
+
+<body class="fondo text-white">
+
+    
+    <div class="container">
+        <div class="micontainer">
+            <div th:insert="layouts/header :: header"></div>
+            <div class="login col-md-3 container d-flex align-items-center justify-content-center">
+                <form action="" method="POST">
+                    <div class="form-group text-center">
+                        <label for="nombre" class="text-white form-label">Nombre Usuario</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control">
+                    </div>
+                    <div class="form-group text-center">
+                        <label for="contra" class="text-white form-label">Contrasena</label>
+                        <input type="password" name="contra" id="contra" class="form-control">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" value="Enviar" class="btn btn-success mr-2">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div th:insert="layouts/footer :: footer"></div>
+    </div>
+    
+
+
+    <script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}" type="text/javascript"
+        src="webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}" type="text/javascript"
+        src="webjars/popper.js/1.16.0/popper.min.js"></script>
+    <script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"
+        src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

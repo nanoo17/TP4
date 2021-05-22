@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="formulario" th:fragment="formulario-cliente-editar">
+        <form id="formCliente" th:object="${unCliente}" th:action="@{/cliente/modificar}" method="post">
+            <div class="form-group row">
+                <label for="tipodoc" class="col-sm-2 form-label">Tipo de Documento: </label>
+                <input type="text" id="tipodoc" th:field="*{tipoDeDocumento}" class="col-sm-7 form-control" readonly>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="numdoc" class="col-sm-2 form-label">Documento:</label>
+                <input type="number" id="numdoc" th:field="*{numeroDocumento}" class="col-sm-7 form-control" readonly>
+            </div>
+
+            <br>
+
+            <div class="form-group row">
+                <label for="nombreapellido" class="col-sm-2 form-label">Nombre y Apellido:</label>
+                <input type="text" id="nombreapellido" th:field="*{nombreApellido}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 form-label">Email:</label>
+                <input type="email" id="email" th:field="*{email}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="fechanac" class="col-sm-2 form-label">Nacimiento:</label>
+                <input type="date" id="fechanac" th:field="*{fechaNacimiento}" class="col-sm-7 form-control" required>
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="fucompra" class="col-sm-2 form-label">Fecha ultima compra:</label>
+                <input type="date" id="fucompra" th:field="*{fechaUltimaCompra}" class="col-sm-7 form-control" required>
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="codigo" class="col-sm-2 form-label">Cod Area:</label>
+                <input type="number" id="codigo" th:field="*{codigoAreaTelefono}" class="col-sm-7 form-control">
+            </div>
+
+            <br>
+            <div class="form-group row">
+                <label for="numtel" class="col-sm-2 form-label">Telefono:</label>
+                <input type="number" id="numtel" th:field="*{numeroTelefono}" class="col-sm-7 form-control">
+            </div>
+            <br>
+            <div class="form-group d-flex boton">
+                <button type="submit" class="btn btn-success mr-2">Modificar</button>
+                <button type="reset" class="btn btn-danger">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

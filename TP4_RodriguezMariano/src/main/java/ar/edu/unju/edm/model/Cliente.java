@@ -21,11 +21,21 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
+	private Integer idCliente;
+	@Column
 	private int numeroDocumento;
 	@Column
 	private int codigoAreaTelefono;
 	@Column
 	private int numeroTelefono;
+	public Integer getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
+	}
+
 	@Column
 	private String tipoDeDocumento;
 	@Column

@@ -15,7 +15,6 @@ import ar.edu.unju.edm.service.interfaces.IClienteService;
 @Controller
 public class ClienteController {
 
-	
 	@Autowired
 	IClienteService clienteService;
 

@@ -20,9 +20,13 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" th:href="@{/producto}">Productos</a>
-                </li>
+               <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Productos</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="/producto">Producto Administrador</a></li>
+          <li><a class="dropdown-item" href="/producto/mostrar">Venta</a></li>
+        </ul>
+					</li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/cliente/mostrar}">Clientes</a>
                   </li>

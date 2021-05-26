@@ -10,7 +10,7 @@ import ar.edu.unju.edm.model.Producto;
 public interface IProductoService {
 	
 	void guardarProducto(Producto unProducto);
-	void eliminarProducto(int codigo);
+	void eliminarProducto(int codigo) throws Exception;
 	Producto obtenerProducto(int codigo);
 	List<Producto> obtenerProductos();
 	Producto obtenerNuevoProducto();

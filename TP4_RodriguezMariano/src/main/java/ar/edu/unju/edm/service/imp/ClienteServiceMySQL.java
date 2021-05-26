@@ -34,17 +34,17 @@ IclienteDAO clienteDAO;
 		return (List<Cliente>) clienteDAO.findAll();
 	}
 
-	@Override
-	public Cliente encontrarCliente(int dni) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	   @Override
+	    public Cliente encontrarCliente(int dni) throws Exception{
+	        return clienteDAO.findBynumeroDocumento(dni).orElseThrow(()->new Exception("El cliente no existe"));
+	    }
 
-	@Override
-	public void modificarCliente(Cliente clienteModificado) {
-		// TODO Auto-generated method stub
-		
-	}
+	 @Override
+	    public void modificarCliente(Cliente clienteModificado) throws Exception {
+	        Cliente modificarCliente = encontrarCliente(clienteModificado.getNumeroDocumento());
+	        cambiarCliente(clienteModificado, modificarCliente);
+	        clienteDAO.save(modificarCliente);
+	    }
 
 	@Override
 	public void eliminarCliente(int dni) throws Exception {
@@ -52,5 +52,14 @@ IclienteDAO clienteDAO;
 		Cliente clienteEliminar = clienteDAO.findBynumeroDocumento(dni).orElseThrow(()-> new Exception("el cliente no fue encontrado"));
 		clienteDAO.delete(clienteEliminar);
 	}
-
+    private void cambiarCliente(Cliente desde, Cliente hacia) {
+		hacia.setNumeroDocumento(desde.getNumeroDocumento());
+		hacia.setTipoDeDocumento(desde.getTipoDeDocumento());
+		hacia.setFechaNacimiento(desde.getFechaNacimiento());
+		hacia.setCodigoAreaTelefono(desde.getCodigoAreaTelefono());
+		hacia.setNumeroTelefono(desde.getNumeroTelefono());
+        hacia.setFechaUltimaCompra(desde.getFechaUltimaCompra());
+		hacia.setEmail(desde.getEmail());
+        hacia.setNombreApellido(desde.getNombreApellido());
+	}
 }

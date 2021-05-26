@@ -24,6 +24,7 @@
             <div class="form-group row">
                 <label for="numdoc" class="col-sm-2 form-label">Documento:</label>
                 <input type="number" id="numdoc" th:field="*{numeroDocumento}" class="col-sm-7 form-control">
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('numeroDocumento')}" th:errors="*{numeroDocumento}">Name Error</div>
             </div>
 
             <br>
@@ -31,6 +32,7 @@
             <div class="form-group row">
                 <label for="nombreapellido" class="col-sm-2 form-label">Nombre y Apellido:</label>
                 <input type="text" id="nombreapellido" th:field="*{nombreApellido}" class="col-sm-7 form-control">
+            <div class="alert alert-danger" th:if="${#fields.hasErrors('nombreApellido')}" th:errors="*{nombreApellido}">Name Error</div>
             </div>
 
             <br>

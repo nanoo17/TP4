@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
@@ -23,22 +25,16 @@ public class Cliente {
 	@Column
 	private Integer idCliente;
 	@Column
+	@Min(1000)
 	private int numeroDocumento;
 	@Column
 	private int codigoAreaTelefono;
 	@Column
 	private int numeroTelefono;
-	public Integer getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(Integer idCliente) {
-		this.idCliente = idCliente;
-	}
-
 	@Column
 	private String tipoDeDocumento;
 	@Column
+	@NotBlank(message = "Debe incluir nombre y apellido")
 	private String nombreApellido;
 	@Column
 	private String email;
@@ -143,6 +139,13 @@ public class Cliente {
 
 	public void setFechaUltimaCompra(LocalDate fechaUltimaCompra) {
 		this.fechaUltimaCompra = fechaUltimaCompra;
+	}
+	public Integer getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(Integer idCliente) {
+		this.idCliente = idCliente;
 	}
 
 	public String getDatosAdicionales() {

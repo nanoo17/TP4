@@ -39,5 +39,11 @@ IVentaDAO iVentaDAO;
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public void eliminarVenta(int id) {
+		
+		iVentaDAO.deleteById(id);
+		
+	}
 
 }

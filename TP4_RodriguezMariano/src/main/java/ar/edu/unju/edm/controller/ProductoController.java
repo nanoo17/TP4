@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.edm.model.Producto;
 import ar.edu.unju.edm.service.interfaces.IProductoService;
+import ar.edu.unju.edm.service.interfaces.IVentaService;
 
 @Controller
 public class ProductoController {
@@ -20,7 +21,9 @@ public class ProductoController {
 	@Qualifier("sqlimp")
 	IProductoService  iProductoService;
 	
-
+	@Autowired
+	IVentaService iVentas;
+	
 	@GetMapping("/producto")
 	public ModelAndView cargarProducto() {
 		ModelAndView modelView = new ModelAndView("producto");

@@ -11,4 +11,5 @@ public interface IVentaService {
 	public Venta crearVenta();
 	public List<Venta> obtenerTodaVenta();
 	public Venta encontrarUnaVenta(int id) throws Exception;
+	public void eliminarVenta(int id);
 }

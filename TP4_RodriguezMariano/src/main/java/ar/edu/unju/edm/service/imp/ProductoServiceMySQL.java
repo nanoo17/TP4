@@ -24,14 +24,18 @@ IproductoDAO productoDAO;
 	}
 
 	@Override
-	public void eliminarProducto(int codigo) throws Exception {
+	public void eliminarProducto(Integer codigo) throws Exception {
 		// TODO Auto-generated method stub
-		Producto productoEliminar = productoDAO.findBycodigo(codigo).orElseThrow(()-> new Exception("Producto no encontrado"));
-		productoDAO.delete(productoEliminar);;
+		/*System.out.println(codigo + " codigo que llega");
+		Producto productoEliminar = productoDAO.findById(codigo).orElseThrow(()->new Exception("Producto no encontrado"));
+		System.out.println("codigo eliminado "+ productoEliminar);
+		productoDAO.delete(productoEliminar);;*/
+		productoDAO.deleteById(codigo);
 	}
 
+
 	@Override
-	public Producto obtenerProducto(int codigo) {
+	public Producto obtenerProducto(Integer codigo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -60,4 +64,11 @@ IproductoDAO productoDAO;
 		
 	}
 
+	@Override
+	public Producto obtenerProductoCodigo(Integer codigo) {
+		// TODO Auto-generated method stub
+		System.out.println(productoDAO.findById(codigo)+ "codigo encontrado");
+		return productoDAO.findById(codigo).orElseThrow();
+	}
+	
 }

@@ -54,7 +54,7 @@ public class ProductoController {
 		
 	}
 	@GetMapping("/producto/editar/{codigo}")
-	public String editarProducto(@PathVariable(name = "codigo")int codigo, Model model) throws Exception{
+	public String editarProducto(@PathVariable(name = "codigo")Integer codigo, Model model) throws Exception{
 		try {
 			Producto encontrado = iProductoService.obtenerProducto(codigo);
 			model.addAttribute("unProducto", encontrado);
@@ -67,14 +67,15 @@ public class ProductoController {
 		return "producto";
 	}
 	@GetMapping("/producto/eliminar/{codigoProducto}")
-	public String eliminarProducto(@PathVariable(name = "codigoProducto") int codigo,Model model) throws Exception{
+	public String eliminarProducto(@PathVariable(name = "codigoProducto") Integer codigo,Model model) throws Exception{
 		try {
+			System.out.println("entrando a borrar producto"+ codigo);
 			iProductoService.eliminarProducto(codigo);
 		} catch (Exception e) {
 			model.addAttribute("usuarioErrorMensaje", e.getMessage());
 		}
-		model.addAttribute("productos", iProductoService.obtenerProductos());
-		return "resultado";
+		//model.addAttribute("productos", iProductoService.obtenerProductos());
+		return "redirect:/producto/mostrar";
 	}
 
 	@GetMapping("/producto/mostrar")

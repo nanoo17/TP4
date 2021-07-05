@@ -24,6 +24,9 @@ html{
 .micontainer{
     min-height: 100%;
 }
+.mimodal{
+	color: black;
+}
 a:link{
     color: rgba(30, 245, 234, 0.933);
 }

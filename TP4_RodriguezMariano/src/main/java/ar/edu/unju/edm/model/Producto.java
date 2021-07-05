@@ -15,9 +15,9 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	 private int codigo;
+	private Integer codigo;
 	@Column
-	 int stock;
+	private int stock;
 	@Column
 	private String nombre;
 	@Column
@@ -27,7 +27,8 @@ public class Producto {
 	
 	public Producto() {
 	}
-	public Producto(int codigo, int stock, String nombre, String marca, double precio) {
+
+	public Producto(Integer codigo, int stock, String nombre, String marca, double precio) {
 		super();
 		this.codigo = codigo;
 		this.stock = stock;
@@ -35,41 +36,54 @@ public class Producto {
 		this.marca = marca;
 		this.precio = precio;
 	}
-	public int getCodigo() {
+
+	
+	
+	public Integer getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
+
 	public int getStock() {
 		return stock;
 	}
+
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getMarca() {
 		return marca;
 	}
+
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+
 	public double getPrecio() {
 		return precio;
 	}
+
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + codigo;
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		long temp;
@@ -78,6 +92,7 @@ public class Producto {
 		result = prime * result + stock;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -87,7 +102,10 @@ public class Producto {
 		if (getClass() != obj.getClass())
 			return false;
 		Producto other = (Producto) obj;
-		if (codigo != other.codigo)
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
 			return false;
 		if (marca == null) {
 			if (other.marca != null)
@@ -105,9 +123,6 @@ public class Producto {
 			return false;
 		return true;
 	}
-	@Override
-	public String toString() {
-		return "Producto [codigo=" + codigo + ", stock=" + stock + ", nombre=" + nombre + ", marca=" + marca
-				+ ", precio=" + precio + "]";
-	}
+
+	
 }
